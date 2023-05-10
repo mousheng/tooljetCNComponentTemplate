@@ -9,8 +9,8 @@ x = {
   component: '{tempName}',
   // 默认组件大小
   defaultSize: {
-    width: 30,
-    height: 300,
+    width: 15,
+    height: 250,
   },
   // 默认子组件
   defaultChildren: [
@@ -61,6 +61,17 @@ x = {
         },
       },
     },
+    value4: {
+      type: 'select',
+      displayName: '我是选择属性',
+      options: [
+        { name: '选项1', value: '1' },
+        { name: '选项2', value: '2' },
+      ],
+      validation: {
+        schema: { type: 'string' },
+      },
+    },
   },
   events: { onClick: { displayName: '点击事件' } },
   styles: {
@@ -80,6 +91,15 @@ x = {
         },
       },
     },
+    disabledState: {
+      type: 'toggle',
+      displayName: '禁用',
+      validation: {
+        schema: {
+          type: 'boolean',
+        },
+      },
+    },
   },
   // 动作列表，需在组件中注册接受动作
   actions: [
@@ -89,8 +109,9 @@ x = {
       // 参数
       params: [
         {
-          handle: 'id',
+          handle: 'num',
           displayName: '参数',
+          defaultValue: '1',
         },
       ],
     },
@@ -106,15 +127,17 @@ x = {
     properties: {
       value1: {
         value:
-          "{{[ \n\t\t{ title: '主页', id: '0' }, \n\t\t{ title: '展示', id: '1' }, \n\t\t{ title: '设置', id: '2' } \n ]}}",
+          "{{[ \n\t\t{ title: '主页'}, \n\t\t{ title: '展示' }, \n\t\t{ title: '设置'} \n ]}}",
       },
       value2: { value: true },
       value3: { value: 100 },
+      value4: { value: 1 },
     },
     events: [],
     styles: {
-      color: { value: '#000' },
+      color: { value: '#CFD1F3' },
       visibility: { value: '{{true}}' },
+      disabledState: { value: '{{false}}' },
     },
   },
 }
