@@ -31,15 +31,6 @@ x = {
       validation: {
         schema: {
           type: 'array',
-          element: {
-            type: 'object',
-            object: {
-              id: {
-                type: 'union',
-                schemas: [{ type: 'string' }, { type: 'number' }],
-              },
-            },
-          },
         },
       },
     },
@@ -131,7 +122,7 @@ x = {
       },
       value2: { value: true },
       value3: { value: 100 },
-      value4: { value: 1 },
+      value4: { value: '1' },
     },
     events: [],
     styles: {
