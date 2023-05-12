@@ -9,6 +9,7 @@ export const _tempName_ = function _tempName_({
     currentState,
     onComponentOptionChanged,
     onComponentOptionsChanged,
+    setExposedVariable,
     onEvent,
     canvasWidth,
     registerAction,
@@ -62,6 +63,7 @@ export const _tempName_ = function _tempName_({
         'callme',
         async function (num) {
             console.log('传入参数：'+num)
+            setExposedVariable('value5',count + 1)
             setCount(count + 1)
         },
         [count]

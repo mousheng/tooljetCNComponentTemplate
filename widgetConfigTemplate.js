@@ -24,13 +24,16 @@ x = {
   properties: {
     // 属性名,传入组件的属性名
     value1: {
-      // 输入属性的输入框类型
+      // 输入属性的输入框类型，code/toggle/color/number/select等
       type: 'code',
       // 显示名称
       displayName: '我是属性1',
       validation: {
         schema: {
+          // string/array/number
           type: 'array',
+          // 指定子元素类型范围
+          // element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] }
         },
       },
     },
@@ -107,9 +110,11 @@ x = {
       ],
     },
   ],
-  // 暴露的值，用于调用
-  exposedVariables: { value5: '我是value5' },
-  // 定义默认值
+  // 暴露的值，用于其他交互，组件中可用setExposedVariable设置值
+  exposedVariables: {
+    value5: '设置暴露默认值'
+  },
+  // 定义新建组件时的默认值
   definition: {
     others: {
       showOnDesktop: { value: '{{true}}' },
