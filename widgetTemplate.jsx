@@ -17,14 +17,15 @@ export const _tempName_ = function _tempName_({
     styles,
     fireEvent,
 }) {
+    const [visibility, setVisibility] = useState(styles.visibility);
+    const [disabledState, setDisabledState] = useState(styles.disabledState);
+
     var inputRef = useRef(null)
     const [value1, setValue1] = useState(properties.value1);
     const [value2, setValue2] = useState(properties.value2);
     const [value3, setValue3] = useState(properties.value3);
     const [value4, setValue4] = useState(properties.value4);
-    const [visibility, setVisibility] = useState(styles.visibility);
     const [color, setColor] = useState(styles.color);
-    const [disabledState, setDisabledState] = useState(styles.disabledState);
 
     useEffect(() => {
         setValue1(properties.value1)
