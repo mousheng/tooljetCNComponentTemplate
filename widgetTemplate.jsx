@@ -21,15 +21,15 @@ export const _tempName_ = function _tempName_({
     const [disabledState, setDisabledState] = useState(styles.disabledState);
 
     var inputRef = useRef(null)
-    const [value1, setValue1] = useState(properties.value1);
+    const [datas, setDatas] = useState(properties.datas);
     const [value2, setValue2] = useState(properties.value2);
     const [value3, setValue3] = useState(properties.value3);
     const [value4, setValue4] = useState(properties.value4);
     const [color, setColor] = useState(styles.color);
 
     useEffect(() => {
-        setValue1(properties.value1)
-    }, [properties.value1])
+        setDatas(properties.datas)
+    }, [properties.datas])
     useEffect(() => {
         setValue2(properties.value2)
     }, [properties.value2])

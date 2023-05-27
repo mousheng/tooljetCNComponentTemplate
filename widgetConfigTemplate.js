@@ -23,8 +23,8 @@ x = {
   // 主属性
   properties: {
     // 属性名,传入组件的属性名
-    value1: {
-      // 输入属性的输入框类型，code/toggle/color/number/select等
+    datas: {
+      // 输入属性的输入框类型，/code/toggle/color/number/select等
       type: 'code',
       // 显示名称
       displayName: '我是属性1',
@@ -33,7 +33,7 @@ x = {
           // string/array/number
           type: 'array',
           // 指定子元素类型范围
-          // element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] }
+          // element: { type: 'union', schemas: [{ type: 'string' }, { type: 'object' }] }
         },
       },
     },
@@ -67,7 +67,10 @@ x = {
       },
     },
   },
-  events: { onClick: { displayName: '点击事件' } },
+  // 事件列表 /onClick/onCheck/onSearch/onChange/onSelect/onHover/onFocus/onBlur
+  events: { 
+    onClick: { displayName: '点击事件' },
+  },
   styles: {
     color: {
       type: 'color',
@@ -121,9 +124,12 @@ x = {
       showOnMobile: { value: '{{false}}' },
     },
     properties: {
-      value1: {
-        value:
-          "{{[ \n\t\t{ title: '主页'}, \n\t\t{ title: '展示' }, \n\t\t{ title: '设置'} \n ]}}",
+      datas: {
+        value:`{{[
+{ title: '主页'},
+{ title: '展示' },
+{ title: '设置'}
+]}}`,
       },
       value2: { value: true },
       value3: { value: 100 },
