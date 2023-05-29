@@ -80,7 +80,7 @@ export const _tempName_ = function _tempName_({
             使用其他组件调用增加计数：{count}<br></br>
             value1:<br></br>
             <ui>
-                {value1.map((v) => (<li>{v.title}</li>))}
+                {datas.map((v) => (<li>{v.title}</li>))}
             </ui>
             value2:{value2.toString()}<br></br>
             value3:{value3.toString()}<br></br>
