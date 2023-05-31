@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+// antd 暗色主题计算
+// import { theme } from 'antd';
+// const { darkAlgorithm, compactAlgorithm } = theme;
 
 export const _tempName_ = function _tempName_({
     id,
@@ -21,31 +24,25 @@ export const _tempName_ = function _tempName_({
     const [disabledState, setDisabledState] = useState(styles.disabledState);
 
     var inputRef = useRef(null)
+    
     const [datas, setDatas] = useState(properties.datas);
     const [value2, setValue2] = useState(properties.value2);
     const [value3, setValue3] = useState(properties.value3);
     const [value4, setValue4] = useState(properties.value4);
+    // 样式
     const [color, setColor] = useState(styles.color);
 
-    useEffect(() => {
-        setDatas(properties.datas)
-    }, [properties.datas])
-    useEffect(() => {
-        setValue2(properties.value2)
-    }, [properties.value2])
-    useEffect(() => {
-        setValue3(properties.value3)
-    }, [properties.value3])
-    useEffect(() => {
-        setValue4(properties.value4)
-    }, [properties.value4])
+    useEffect(() => {setDatas(properties.datas)}, [properties.datas])
+    useEffect(() => {setValue2(properties.value2)}, [properties.value2])
+    useEffect(() => {setValue3(properties.value3)}, [properties.value3])
+    useEffect(() => {setValue4(properties.value4)}, [properties.value4])
+    //样式处理
+    useEffect(() => {setColor(styles.color)}, [styles.color])
     useEffect(() => {
         setVisibility(styles.visibility)
         setDisabledState(styles.disabledState)
     }, [styles.visibility, styles.disabledState])
-    useEffect(() => {
-        setColor(styles.color)
-    }, [styles.color])
+
 
     // 处理点击事件
     const handleClick = () => {
@@ -69,6 +66,12 @@ export const _tempName_ = function _tempName_({
         },
         [count]
     );
+    // 计算暗色主题
+    // const darkTheme = {
+    //     algorithm: [darkAlgorithm, compactAlgorithm],
+    //     token: {    // 指定组件Global Token引入 
+    //     }
+    // };
 
 
     return (<div data-disabled={disabledState} style={{ width: width - 5, height, display: visibility ? '' : 'none' }}>
