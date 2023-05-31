@@ -24,7 +24,7 @@ export const _tempName_ = function _tempName_({
     const [disabledState, setDisabledState] = useState(styles.disabledState);
 
     var inputRef = useRef(null)
-    
+
     const [datas, setDatas] = useState(properties.datas);
     const [value2, setValue2] = useState(properties.value2);
     const [value3, setValue3] = useState(properties.value3);
@@ -32,12 +32,18 @@ export const _tempName_ = function _tempName_({
     // 样式
     const [color, setColor] = useState(styles.color);
 
-    useEffect(() => {setDatas(properties.datas)}, [properties.datas])
-    useEffect(() => {setValue2(properties.value2)}, [properties.value2])
-    useEffect(() => {setValue3(properties.value3)}, [properties.value3])
-    useEffect(() => {setValue4(properties.value4)}, [properties.value4])
+    useEffect(() => {
+        if (Array.isArray(properties.menuData)) {
+            setDatas(properties.datas)
+        } else {
+            setDatas([])
+        }
+    }, [properties.datas])
+    useEffect(() => { setValue2(properties.value2) }, [properties.value2])
+    useEffect(() => { setValue3(properties.value3) }, [properties.value3])
+    useEffect(() => { setValue4(properties.value4) }, [properties.value4])
     //样式处理
-    useEffect(() => {setColor(styles.color)}, [styles.color])
+    useEffect(() => { setColor(styles.color) }, [styles.color])
     useEffect(() => {
         setVisibility(styles.visibility)
         setDisabledState(styles.disabledState)
@@ -60,8 +66,8 @@ export const _tempName_ = function _tempName_({
     registerAction(
         'callme',
         async function (num) {
-            console.log('传入参数：'+num)
-            setExposedVariable('value5',count + 1)
+            console.log('传入参数：' + num)
+            setExposedVariable('value5', count + 1)
             setCount(count + 1)
         },
         [count]
