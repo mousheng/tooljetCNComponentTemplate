@@ -75,8 +75,6 @@ export const _tempName_ = function _tempName_({
     // 计算暗色主题
     // const darkTheme = {
     //     algorithm: [darkAlgorithm, compactAlgorithm],
-    //     token: {    // 指定组件Global Token引入 
-    //     }
     // };
 
 
@@ -86,7 +84,11 @@ export const _tempName_ = function _tempName_({
             onClick={handleClick}
         >
             {/* <ConfigProvider
-                theme={darkMode ? darkTheme : null}
+                theme={darkMode ? darkTheme : {
+                token: {
+                    // colorBgContainer: color,
+                }
+            }}
             >
                 子组件放这里
             </ConfigProvider> */}
