@@ -85,6 +85,11 @@ export const _tempName_ = function _tempName_({
             style={{ 'background-color': darkMode ? '#2b3546' : color }}
             onClick={handleClick}
         >
+            {/* <ConfigProvider
+                theme={darkMode ? darkTheme : null}
+            >
+                子组件放这里
+            </ConfigProvider> */}
             我是新组件<br></br>
             使用其他组件调用增加计数：{count}<br></br>
             value1:<br></br>
