@@ -91,8 +91,8 @@ export const _tempName_ = function _tempName_({
                 token: {
                     // colorBgContainer: color,
                 }
-                locale={zhCN}
             }}
+            locale={zhCN}
             >
                 ant子组件放这里
             </ConfigProvider> */}
