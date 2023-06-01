@@ -36,7 +36,7 @@ export const _tempName_ = function _tempName_({
     const [color, setColor] = useState(styles.color);
 
     useEffect(() => {
-        if (Array.isArray(properties.menuData)) {
+        if (Array.isArray(properties.datas)) {
             setDatas(properties.datas)
         } else {
             setDatas([])
