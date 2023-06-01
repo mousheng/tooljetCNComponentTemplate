@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 // antd 暗色主题计算
 // import { theme,ConfigProvider } from 'antd';
 // const { darkAlgorithm, compactAlgorithm } = theme;
+// 导入本地中文配置
+// import zhCN from 'antd/locale/zh_CN';
+// import dayjs from 'dayjs';
 
 export const _tempName_ = function _tempName_({
     id,
@@ -88,9 +91,10 @@ export const _tempName_ = function _tempName_({
                 token: {
                     // colorBgContainer: color,
                 }
+                locale={zhCN}
             }}
             >
-                子组件放这里
+                ant子组件放这里
             </ConfigProvider> */}
             我是新组件<br></br>
             使用其他组件调用增加计数：{count}<br></br>
